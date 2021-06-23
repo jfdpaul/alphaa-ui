@@ -1,11 +1,14 @@
-import React from 'react';
-
 import styles from './button.module.scss';
 
-const Button = (props: any) => {
-  const { children } = props;
+type Props =  {
+  onClick: React.MouseEventHandler<HTMLButtonElement>,
+  children: string
+}
+
+const Button = (props: Props) => {
+  const { children, onClick } = props;
   return (
-    <button className={styles.container}>
+    <button className={styles.container} onClick={onClick}>
       {children}
     </button>
   );
